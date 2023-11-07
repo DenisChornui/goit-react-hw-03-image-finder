@@ -1,23 +1,30 @@
 import { ErrorMessage, Field, Form, Formik } from 'formik';
-import {FcSearch} from "react-icons/fc"
+import { FcSearch } from 'react-icons/fc';
+import {
+  SearchBarStyled,
+  FormStyled,
+  ButtonStyled,
+  ButtonLabelStyled,
+  InputStyled,
+} from './Searchbar.styled';
 
 export const SearchBar = ({ onSubmit }) => {
   return (
-    <header>
+    <SearchBarStyled>
       <Formik
         initialValues={{ value: '' }}
         onSubmit={(values, actions) => {
           onSubmit(values.value);
           actions.resetForm();
-        }}>
-
-        <Form>
-          <button type="submit">
-            <span>Search</span>
+        }}
+      >
+        <FormStyled>
+          <ButtonStyled type="submit">
+            <ButtonLabelStyled>Search</ButtonLabelStyled>
             <FcSearch />
-          </button>
+          </ButtonStyled>
 
-          <Field
+          <InputStyled
             type="text"
             name="value"
             autoComplete="off"
@@ -25,8 +32,8 @@ export const SearchBar = ({ onSubmit }) => {
             placeholder="Search images and photos"
           />
           <ErrorMessage name="value" component="div" />
-        </Form>
+        </FormStyled>
       </Formik>
-    </header>
+    </SearchBarStyled>
   );
 };
