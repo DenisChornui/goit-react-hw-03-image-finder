@@ -1,4 +1,4 @@
-import { ErrorMessage, Field, Form, Formik } from 'formik';
+import { ErrorMessage, Formik } from 'formik';
 import { FcSearch } from 'react-icons/fc';
 import {
   SearchBarStyled,
