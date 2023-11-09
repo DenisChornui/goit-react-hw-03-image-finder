@@ -20,14 +20,16 @@ export class ImageGalleryItem extends Component {
     const { image } = this.props;
 
     return (
-      <ImageGalleryItemStyled key={image.id} onClick={this.openModal}>
-        <ImgStyled src={image.webformatURL} alt={image.tags} loading="lazy" />
+      <>
+        <ImageGalleryItemStyled key={image.id} onClick={this.openModal}>
+          <ImgStyled src={image.webformatURL} alt={image.tags} loading="lazy" />
+        </ImageGalleryItemStyled>
         <ModalWindow
           isModalOpen={isModalOpen}
           closeModal={this.closeModal}
           image={image}
         />
-      </ImageGalleryItemStyled>
+      </>
     );
   }
 }
